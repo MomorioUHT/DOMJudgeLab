@@ -24,11 +24,7 @@ int calculateMedian(vector<int> numbers) {
     int n = copyList.size();
     int medianIndex;
 
-    if (n%2 == 0) { //Even List floor down
-        medianIndex = (n / 2) - 1; 
-    } else {
-        medianIndex = n / 2;
-    }
+    (n%2 == 0) ? medianIndex = (n / 2) - 1 : medianIndex = n / 2;
 
     return copyList[medianIndex];
 }
