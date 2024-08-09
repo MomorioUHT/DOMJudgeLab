@@ -43,7 +43,8 @@ int main() {
     }
 
     for (int i = 0; i < data.size(); i++) {
-        cout << data[i] << endl;
+        if (i == data.size() - 1) cout << data[i];
+        else cout << data[i] << endl;
     }
 
     return 0;
