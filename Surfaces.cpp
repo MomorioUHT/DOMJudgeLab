@@ -3,9 +3,19 @@
 #include <string>
 using namespace std;
 
-int countX(string n) {
+int removeSpaceFromInt(string text) {
+    string result;
+    for (char s: text) {
+        if (!isspace(s)) {
+            result += s;
+        }
+    }
+    return stoi(result);
+}
+
+int countX(const string& n) {
     int count = 0;
-    for (char x: n) {
+    for (char x : n) {
         if (x == 'X') count++;
     }
     return count;
@@ -14,12 +24,12 @@ int countX(string n) {
 int main() {
     vector<int> data;
 
-    while (1) {
-        int n;
-        cin >> n;
+    while (true) {
+        string text1;
+        getline(cin, text1);
 
-        cin.ignore();
-
+        int n = removeSpaceFromInt(text1);
+        
         if (n == 0) break;
 
         vector<int> tempArr;
@@ -27,6 +37,7 @@ int main() {
         int maxLen = 0;
         for (int i = 0; i < n; i++) {
             string inp;
+            cin.ignore();
             getline(cin, inp);
 
             int xAmount = countX(inp);
@@ -39,12 +50,10 @@ int main() {
             missing += maxLen - tempArr[i];
         }
         data.push_back(missing);
-
     }
 
     for (int i = 0; i < data.size(); i++) {
-        if (i == data.size() - 1) cout << data[i];
-        else cout << data[i] << endl;
+        cout << data[i] << endl;
     }
 
     return 0;

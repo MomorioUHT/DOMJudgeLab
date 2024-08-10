@@ -15,7 +15,7 @@ bool doOp(string op, bool a, bool b) {
 }
 
 bool getValue(vector<pair<char, bool>> variables, char var) {
-    for (auto p : variables) {
+    for (pair<char, bool> p : variables) {
         if (p.first == var) {
             return p.second;
         }
@@ -29,7 +29,7 @@ bool evaluatePostfix(string text, vector<pair<char, bool>> variables) {
     string token;
 
     while (iss >> token) {
-        if (token.size() == 1 && isalpha(token[0])) {
+        if (token.size() == 1 && token != "~" && token != "/\\" && token != "\\/" && token != "->" && token != "<->") {
             st.push_back(getValue(variables, token[0]));
         } else if (token == "~") { 
             bool a = st.back(); st.pop_back();
