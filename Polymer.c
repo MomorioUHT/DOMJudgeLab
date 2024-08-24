@@ -66,8 +66,7 @@ void printList(Node* head, unsigned long long sum) {
     }
     printf("None\n");
     printf("Total Bond Strength: %llu + x,\n", sum);
-    printf("when x is total bond strength in each monomers\n");
-    printf("connected bonds");
+    printf("when x is total bond strength in each monomers connected bonds");
 }
 
 int main() {
