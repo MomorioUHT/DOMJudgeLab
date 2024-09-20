@@ -3,15 +3,15 @@
 
 using namespace std;
 
-bool isLeaf(const vector<int>& tree, int index) {
+bool isLeaf(vector<int> tree, int index) {
     return (2 * index + 1 >= tree.size() && 2 * index + 2 >= tree.size());
 }
 
-bool isHavingLeftChild(const vector<int>& tree, int index) {
+bool isHavingLeftChild(vector<int> tree, int index) {
     return (2 * index + 1 < tree.size()); 
 }
 
-bool isHavingRightChild(const vector<int>& tree, int index) {
+bool isHavingRightChild(vector<int> tree, int index) {
     return (2 * index + 2 < tree.size()); 
 }
 
@@ -34,14 +34,6 @@ void postOrderTraversal(vector<int>& tree, vector<int>& S, int index, int size) 
             S.push_back(tree[index]);
         }
     }
-}
-
-
-void printArray(const vector<int>& arr) {
-    for (int val : arr) {
-        cout << val << " ";
-    }
-    cout << endl;
 }
 
 int main() {
